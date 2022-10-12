@@ -74,57 +74,46 @@ _YOU CAN FOLLOW THE TUTORIAL HERE TO SKIP THE STEP 2 to step 7: https://hevodata
    docker pull postgres
    ```
 
-3. Clone the repo using the username : myusername with password: mypassword on port:5432.
+3. Clone the repo using the password: yourpassword on port:5432 with name: postgres.
    ```sh
-   docker run --name postgresql -e POSTGRES_USER=myusername -e POSTGRES_PASSWORD=mypassword -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres
+   docker run --name postgres -e POSTGRES_PASSWORD=yourpassword -p 5432:5432 -d postgres
    ```
 _Personally, I don't download PGAdmin, if you want, please refer to the tutorial link above to do so._
 
 _After sucessfully running the docker container for the first time, next time, you can just open Docker desktop and run it again, note that the configuration will stay the same_
 
-5. Pull pgAdmin image
+4. Start the postgres script mode by running the command: 
   ```sh
-   git clone https://github.com/Weslife2002/NodeJS-practice-.git
-   ```
-
-6. Run the container
-  ```sh
-   docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=user@domain.local' -e 'PGADMIN_DEFAULT_PASSWORD=postgresmaster'-d dpage/pgadmin4
+   docker exec -ti -u postgres postgres psql
    ```
    
-_Remember to adjust the PGADMIN_DEFAULT_EMAIL and the PGADMIN_DEFAULT_PASSWORD._
-
-7. Access http://localhost:82/ and login using the PGADMIN_DEFAULT_EMAIL and PGADMIN_DEFAULT_PASSWORD.
-
-8. Run the command below to get the IPAddress that the postgreSQL is running on.
+5. Create new database: nodedemo 
   ```sh
-   docker inspect postgresql -f "{{json .NetworkSettings.Networks }}"
+   CREATE DATABASE nodedemo
    ```
-8. Choose create new server and fill in the General and Connection tab. With the localhost is the IPAddress you found above, the username, the password and the port is what you set up on step 3. Also remember to fill in the database name, click save, if the pgAdmin sucessfully connect to the postgres database then you are good to go.
-
-10. Clone the repo
+6. Clone the repo
    ```sh
    git clone https://github.com/Weslife2002/NodeJS-practice-.git
    ```
-11. Clone the .env.example file, change its name to .env and redefine the config.
+7. Clone the .env.example file, change its name to .env and redefine the config.
 _For example above, I will configurate the .env file like this:_ 
 
    ```sh
-    PGUSER= myusername
-    PGHOST= 172.17.0.2
-    PGPASSWORD= mypassword
-    PGDATABASE= my-postgres
+    PGUSER= postgres
+    PGHOST= localhost
+    PGPASSWORD= yourpassword
+    PGDATABASE= nodedemo
     PGPORT= 5432
     PORT= 3000
    ```
 
-12. Install all the dependency.
+8. Install all the dependency.
    ```sh
    npm install
    ```
-13. Run the project
+9. Run the project
    ```sh
-   Node ./src/index.js
+    npm start
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
