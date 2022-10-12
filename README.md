@@ -24,7 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Test
 
-This is the test I received during my intership at MeU Solutions as a NodeJS intern.
+This is the test I received during my intership at MeU Solutions as a NodeJS intern. In this practice test, I need to write 3 APIs (Create, Update, Delete) using PostgreSQL as the database. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
