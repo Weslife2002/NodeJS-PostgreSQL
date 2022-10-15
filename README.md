@@ -67,7 +67,7 @@ _Below is an example of how you can instruct your audience on installing and set
 1. Set up Docker for windows.
 Please refer to this link for more details on setting up Docker on windows https://docs.docker.com/desktop/install/windows-install/.
 
-_YOU CAN FOLLOW THE TUTORIAL HERE TO SKIP THE STEP 2 to step 7: https://hevodata.com/learn/docker-postgresql/_
+_You can setup PostgreSQL using docker yourself by following this tutorial: https://hevodata.com/learn/docker-postgresql/_
 
 2. After finishing setting up Docker Destop, open cmd and clone the postgreSQL image by run the command. 
   ```sh
