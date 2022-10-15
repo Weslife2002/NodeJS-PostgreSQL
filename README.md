@@ -78,7 +78,7 @@ _You can setup PostgreSQL using docker yourself by following this tutorial: http
    ```sh
    docker run --name postgres -e POSTGRES_PASSWORD=yourpassword -p 5432:5432 -d postgres
    ```
-_Personally, I don't download PGAdmin, if you want, please refer to the tutorial link above to do so._
+_Personally, I don't download PGAdmin, if you want, please refer to this link: (https://hevodata.com/learn/docker-postgresql/#step3)._
 
 _After sucessfully running the docker container for the first time, next time, you can just open Docker desktop and run it again, note that the configuration will stay the same_
 
